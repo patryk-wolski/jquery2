@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src='main.js'></script>
+  <style rel='stylesheet' type='text/css' media='screen' href='main.css'></style>
+  <script>
+    $(document).ready(function () {
+      //2
+      //$('#h1').delay(2000).slideUp('slow').slideDown('fast');
+
+      //3
+      $('#showhide').on('click', function () {
+        //$('#movies').toggle();
+
+        if ($('#movies').is(':visible')) {
+          $('#movies').hide();
+        } else {
+          $('#movies').show();
+        }
+      })
+
+      //4
+      $('#font').click(function () {
+        $('p').css('color', $('#color').val());
+      });
+
+      $('#background').click(function () {
+        $('p').css('background-color', $('#color').val());
+      });
+
+      //5
+      $('input').on('paste keyup', function () {
+        $('.div').text($('input').val());
+      });
+
+      //6
+      $('#change-class').click(function () {
+        $('img').toggleClass('small');
+        $('img').toggleClass('big');
+      });
+
+      //7
+      $('#fadein').click(function () {
+        $('table').fadeIn('fast');
+      });
+
+      $('#fadeout').click(function () {
+        $('table').fadeOut('slow');
+      });
+
+      //8
+      $('img').on({
+        mouseenter: function () {
+          $('button').hide();
+        },
+        mouseleave: function () {
+          $('button').show();
+        }
+      });
+
+      //9
+      $('#list-add').click(function () {
+        //$('ul li:last').remove();
+        $('ul').append('<li>' + $('#list-value').val() + '</li>');
+      });
+
+      //10
+      $('#list-remove').click(function () {
+        //$('ul li:last').remove();
+        // $('ul li').last().remove();
+      });
+    });
+  </script>
+
+  <style>
+    .small {
+      width: 100px;
+      height: 100px;
+    }
+
+    .big {
+      width: 150px;
+      height: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="h1">Witaj na mojej stronie!</h1>
+
+  <div id='movies'>
+    <ul>
+      <li>Film 1</li>
+      <li>Film 2</li>
+      <li>Film 3</li>
+    </ul>
+  </div>
+
+  <button id="showhide">'Pokaż/ukryj'</button>
+
+  <p>tekst</p>
+  <p>tekst</p>
+  <p>tekst</p>
+  <p>tekst</p>
+
+  <select id="color">
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+    <option value="green">green</option>
+  </select>
+  <button id="font">click</button>
+  <button id="background">click</button>
+  <br>
+
+  <img class="img small"
+    src="https://yt3.ggpht.com/C9H6JGmzD3DpygXokWIm1Zy8E5BSdqJnSN0ZUQDoLEizxTOvOi0y9_fdAtWWWTSQeGn0TOLs=s900-c-k-c0x00ffffff-no-rj">
+  <button id="change-class">zmień</button>
+  <br>
+  <br>
+
+  <br>
+  <br>
+
+  <div class="div"></div>
+  <div class="div"></div>
+  <input type="text">
+
+  <br>
+  <br>
+
+  <table style="display: none">
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <button id="fadein">Fade in</button>
+  <button id="fadeout">Fade out</button>
+
+
+  <br>
+  <br>
+  <input id="list-value" type="text">
+  <button id="list-add">dodawanie</button>
+  <button id="list-remove">usuwanie</button>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+
+  <br>
+  <br>
+</body>
+
+</html>
